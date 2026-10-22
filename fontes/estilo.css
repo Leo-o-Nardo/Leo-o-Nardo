@@ -1,0 +1,23 @@
+/*
+  O visual do perfil: monocromático, com as cores do próprio GitHub, para as imagens se
+  confundirem com a página nos dois temas. Uma fonte para títulos (Inter Tight) e uma para
+  o resto (Inter).
+*/
+:root {
+  --pagina: #FFFFFF;
+  --cartao: #F6F8FA;
+  --borda: #D1D9E0;
+  --texto: #1F2328;
+  --apoio: #59636E;
+  --titulo: 'Inter Tight', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --corpo: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+.escuro {
+  --pagina: #0D1117;
+  --cartao: #151B23;
+  --borda: #3D444D;
+  --texto: #F0F6FC;
+  --apoio: #9198A1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--pagina); color: var(--texto); font-family: var(--corpo); }

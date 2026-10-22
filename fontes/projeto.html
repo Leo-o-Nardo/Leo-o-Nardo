@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa de projeto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+html, body { overflow: hidden; }
+body { height: 100%; }
+.cartao {
+  position: relative;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+}
+.nome { position: absolute; left: 40px; top: 36px; font: 600 40px/1 var(--titulo); letter-spacing: -.03em; }
+.stack { position: absolute; left: 40px; top: 92px; font-size: 19px; line-height: 1.6; color: var(--apoio); }
+/* As telas saem pela borda de baixo do cartão, como se continuassem. */
+.tela { position: absolute; display: block; border: 1px solid var(--borda); background: var(--pagina); }
+.celular { width: 230px; border-radius: 26px; padding: 6px; }
+.celular img { display: block; width: 100%; border-radius: 20px; }
+.janela { border-radius: 10px 0 0 0; overflow: hidden; }
+.janela img { display: block; width: 100%; }
+</style>
+</head>
+<body>
+<div class="cartao" id="cartao"></div>
+<script src="tema.js"></script>
+<script>
+/*
+  A capa de cada projeto no README do perfil: nome, ferramentas e as telas de verdade.
+  ?p=caderneta|safepay|pgsaas escolhe o projeto. Só tem nomes próprios, então serve às duas
+  línguas. As telas vêm dos repositórios de cada projeto.
+*/
+const RAW = 'https://raw.githubusercontent.com/Leo-o-Nardo';
+
+const celular = (src, left, top, largura = 230) =>
+  `<div class="tela celular" style="left:${left}px;top:${top}px;width:${largura}px"><img src="${src}" alt=""></div>`;
+
+const PROJETOS = {
+  caderneta: {
+    tamanho: [1280, 580],
+    nome: 'Caderneta',
+    stack: ['Laravel · Reverb · PostgreSQL', 'React Native · Expo'],
+    // Aqui os celulares aparecem inteiros, com folga embaixo.
+    telas:
+      celular(`${RAW}/caderneta/main/assets/inicio.png`, 490, 60, 220) +
+      celular(`${RAW}/caderneta/main/assets/chat.png`, 744, 40, 220) +
+      celular(`${RAW}/caderneta/main/assets/resumo.png`, 998, 60, 220),
+  },
+  safepay: {
+    tamanho: [640, 420],
+    nome: 'SafePay',
+    stack: ['Laravel · RabbitMQ · Kafka'],
+    telas: `<div class="tela janela" style="left:40px;top:150px;width:900px"><img src="${RAW}/SafePay/main/assets/data.png" alt=""></div>`,
+  },
+  pgsaas: {
+    tamanho: [640, 420],
+    nome: 'PgSaaS',
+    stack: ['Laravel · PostgreSQL RLS', 'React Native · Expo'],
+    telas: celular(`${RAW}/postgres-rls-multitenancy/main/assets/mobile-dashboard.png`, 370, 40),
+  },
+};
+
+const projeto = PROJETOS[new URLSearchParams(location.search).get('p') ?? 'caderneta'];
+document.documentElement.style.width = `${projeto.tamanho[0]}px`;
+document.documentElement.style.height = `${projeto.tamanho[1]}px`;
+document.getElementById('cartao').innerHTML =
+  `<p class="nome">${projeto.nome}</p><p class="stack">${projeto.stack.join('<br>')}</p>${projeto.telas}`;
+</script>
+</body>
+</html>
