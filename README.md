@@ -20,7 +20,7 @@ Aqui estão alguns projetos que desenvolvo por conta própria e mantenho como c�
 
 **[Caderneta](https://github.com/Leo-o-Nardo/caderneta)**: um app para organizar as finanças da casa usando mensagens de voz. A pessoa fala o que gastou e um agente de IA transforma isso em um lançamento. O projeto usa Laravel no back-end, com filas e WebSocket, React Native no app e testes nas duas pontas. Também tem uma camada de proteção dos dados antes de enviá-los à IA.
 
-Veja também o [guia de design](https://leo-o-nardo.github.io/caderneta/design-guide.html) e a [documentação técnica](https://github.com/Leo-o-Nardo/caderneta/tree/main/docs/tecnico).
+Veja também o [guia de design](https://leo-o-nardo.github.io/caderneta/design-guide.html) e [como ele funciona por dentro](https://leo-o-nardo.github.io/caderneta/apresentacao.html).
 
 <a href="https://github.com/Leo-o-Nardo/SafePay"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/safepay-escuro.png"><img src="./assets/safepay-claro.png" alt="SafePay: o console de operações de pagamentos" width="49%"></picture></a>
 <a href="https://github.com/Leo-o-Nardo/postgres-rls-multitenancy"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/pgsaas-escuro.png"><img src="./assets/pgsaas-claro.png" alt="PgSaaS: o app de monitoramento durante um teste de carga" width="49%"></picture></a>

@@ -20,7 +20,7 @@ Here are some projects I build on my own and keep open source. In each repositor
 
 **[Caderneta](https://github.com/Leo-o-Nardo/caderneta)**: an app to organize household finances using voice messages. You say what you spent and an AI agent turns it into an entry. The project uses Laravel on the back end, with queues and WebSockets, React Native for the app, and tests on both sides. It also has a layer that protects the data before sending it to the AI.
 
-See also the [design guide](https://leo-o-nardo.github.io/caderneta/design-guide.html) and the [technical documentation](https://github.com/Leo-o-Nardo/caderneta/tree/main/docs/tecnico) (in Portuguese).
+See also the [design guide](https://leo-o-nardo.github.io/caderneta/design-guide.html) and [how it works inside](https://leo-o-nardo.github.io/caderneta/apresentacao.html) (both in Portuguese).
 
 <a href="https://github.com/Leo-o-Nardo/SafePay"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/safepay-escuro.png"><img src="./assets/safepay-claro.png" alt="SafePay: the payment operations console" width="49%"></picture></a>
 <a href="https://github.com/Leo-o-Nardo/postgres-rls-multitenancy"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/pgsaas-escuro.png"><img src="./assets/pgsaas-claro.png" alt="PgSaaS: the monitoring app during a load test" width="49%"></picture></a>
